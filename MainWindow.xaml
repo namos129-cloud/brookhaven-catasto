@@ -1,0 +1,20 @@
+<Window x:Class="CatastoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestione Catasto" Height="350" Width="525">
+    <Grid>
+        <ListView ItemsSource="{Binding UnitaImmobiliari}" SelectedItem="{Binding UnitaSelezionata}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Indirizzo" DisplayMemberBinding="{Binding Indirizzo}" />
+                    <GridViewColumn Header="Numero Catastale" DisplayMemberBinding="{Binding NumeroCatastale}" />
+                    <GridViewColumn Header="Superficie" DisplayMemberBinding="{Binding Superficie}" />
+                    <GridViewColumn Header="Proprietario" DisplayMemberBinding="{Binding Proprietario}" />
+                    <GridViewColumn Header="Valore Imponibile" DisplayMemberBinding="{Binding ValoreImponibile}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Aggiungi Unità" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Click="Aggiungi_Click"/>
+    </Grid>
+</Window>
